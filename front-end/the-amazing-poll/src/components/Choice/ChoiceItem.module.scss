@@ -1,13 +1,11 @@
 .choiceContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
     background-color: aquamarine;
-    border: solid;
+    border: solid 3px;
     border-color: cadetblue;
     border-radius: 10px;
-    padding: 15px;
+    overflow: hidden;
+    padding-right: 15px;
     margin: 5px;
 }
 
@@ -16,5 +14,18 @@
 }
 
 .percentage {
+    position: absolute;
     color: coral;
+    right: 15px;
+}
+
+.progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cadetblue;
+    transition: width 0.5s ease;
+    height: 100%;
+    padding: 15px;
 }
