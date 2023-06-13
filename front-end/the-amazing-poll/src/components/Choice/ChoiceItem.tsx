@@ -1,4 +1,4 @@
-import styles from './Choice.module.scss'
+import styles from './ChoiceItem.module.scss'
 
 import Choice from '../../models/Choice'
 

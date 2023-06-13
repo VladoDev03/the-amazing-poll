@@ -14,7 +14,7 @@ const Preview = () => {
     ]
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1 className={styles.title}>Languages</h1>
             <ChoicesList items={items} />
         </div>

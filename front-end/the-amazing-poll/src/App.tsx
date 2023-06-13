@@ -1,13 +1,9 @@
 import './App.scss';
-import Preview from './components/Preview/Preview';
-import Navbar from './components/Navbar/Navbar';
+import NewPoll from './components/NewPoll/NewPoll';
 
 function App() {
     return (
-        <div className="App">
-            <Preview />
-            <Navbar />
-        </div>
+        <NewPoll />
     );
 }
 
