@@ -1,11 +1,12 @@
 import styles from './NewPoll.module.scss'
 
 import Preview from '../Preview/Preview';
+import NewPollForm from '../NewPollForm/NewPollForm';
 
 const NewPoll = () => {
     return (
         <div className={styles.container}>
-            <h1>There should be a form here...</h1>
+            <NewPollForm />
             <Preview />
         </div>
     );
