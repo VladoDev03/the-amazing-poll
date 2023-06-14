@@ -1,7 +1,8 @@
 import styles from './NewPollForm.module.scss'
 
 import TextInput from '../TextInput/TextInput';
-import AddButton from '../AddButton';
+import AddButton from '../AddButton/AddButton';
+import SubmitButton from '../SubmitButton/SubmitButton';
 
 const NewPollForm = () => {
     return (
@@ -9,9 +10,12 @@ const NewPollForm = () => {
             <h1 className={styles.title}>Create new Poll</h1>
             <form action="">
                 <TextInput title='Question' />
-                <div className={styles.optionHolder}>
+                <div className={styles.optionsHolder}>
                     <TextInput title='Option' />
                     <AddButton />
+                </div>
+                <div className={styles.buttonsHolder}>
+                    <SubmitButton />
                 </div>
             </form>
         </div>

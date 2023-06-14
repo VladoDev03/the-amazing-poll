@@ -11,9 +11,15 @@
     padding: 10px;
 }
 
-.optionHolder {
+.optionsHolder {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.buttonsHolder {
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
 }
 

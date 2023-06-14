@@ -1,0 +1,15 @@
+.submitButton {
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+    border: solid 2px;
+    border-radius: 15px;
+    font-size: large;
+    margin-top: 10px;
+    background-color: chartreuse;
+    color: darkcyan;
+
+    &:hover {
+        font-size: larger;
+    }    
+}
