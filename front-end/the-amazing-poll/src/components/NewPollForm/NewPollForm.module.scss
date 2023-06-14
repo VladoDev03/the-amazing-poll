@@ -1,0 +1,17 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    border: solid 3px;
+    border-color: darkred;
+    border-radius: 15px;
+    width: 500px;
+    padding: 10px;
+}
+
+.title {
+    color: crimson;
+    margin: 10px;
+}
