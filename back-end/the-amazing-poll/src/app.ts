@@ -2,6 +2,7 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import authMiddleware from './middlewares/authMiddleware';
 
 dotenv.config();
 
@@ -27,7 +28,11 @@ mongoose.connect(connectionString!)
         console.error('Error connecting to MongoDB:', error);
     });
 
-app.get('', (req: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
+    res.send('The Amazing Poll');
+});
+
+app.get('/auth', authMiddleware, (req: Request, res: Response) => {
     res.send('The Amazing Poll');
 });
 
