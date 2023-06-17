@@ -1,7 +1,7 @@
 import styles from './LoginForm.module.scss'
 
-import TextInput from '../TextInput/TextInput';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import TextInput from '../text-input/TextInput';
+import SubmitButton from '../submit-button/SubmitButton';
 
 const LoginForm = () => {
     return (

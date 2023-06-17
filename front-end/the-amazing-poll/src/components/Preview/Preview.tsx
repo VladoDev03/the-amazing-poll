@@ -1,6 +1,6 @@
 import styles from './Preview.module.scss'
 
-import ChoicesList from '../ChoicesList/ChoicesList';
+import ChoicesList from '../choice-list/ChoicesList';
 
 import Choice from '../../models/Choice';
 

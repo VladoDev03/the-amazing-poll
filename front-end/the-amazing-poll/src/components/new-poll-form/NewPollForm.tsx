@@ -1,8 +1,8 @@
 import styles from './NewPollForm.module.scss'
 
-import TextInput from '../TextInput/TextInput';
-import AddButton from '../AddButton/AddButton';
-import SubmitButton from '../SubmitButton/SubmitButton';
+import TextInput from '../text-input/TextInput';
+import AddButton from '../add-button/AddButton';
+import SubmitButton from '../submit-button/SubmitButton';
 
 const NewPollForm = () => {
     return (

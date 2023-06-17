@@ -1,6 +1,6 @@
 import styles from './ChoicesList.module.scss'
 
-import ChoiceItem from '../ChoiceItem/ChoiceItem';
+import ChoiceItem from '../choice-item/ChoiceItem';
 
 import Choice from '../../models/Choice'
 
