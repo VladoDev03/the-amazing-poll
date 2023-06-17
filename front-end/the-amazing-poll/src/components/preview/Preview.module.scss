@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: dodgerblue;
+    border: solid 3px;
+    border-color: darkred;
+    border-radius: 15px;
+    width: 500px;
+}
+
+.title {
+    color: gold;
+    margin: 10px;
+}
