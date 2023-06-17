@@ -4,9 +4,11 @@ import SubmitButton from '../submit-button/SubmitButton';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import UserLogin from '../../models/UserLogin';
 import * as authServices from '../../services/authServices';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 const LoginForm = () => {
     const [userLogin, setUserLogin] = useState(new UserLogin('', ''));
+    const [auth, setAuth] = useLocalStorage('auth', {})
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -17,9 +19,11 @@ const LoginForm = () => {
         }));
     };
 
-    const submitHandler = (e: FormEvent) => {
+    const submitHandler = async (e: FormEvent) => {
         e.preventDefault();
-        authServices.login(userLogin);
+        const resultData = await authServices.login(userLogin);
+        setAuth(resultData);
+        console.log(auth);
     }
 
     return (
