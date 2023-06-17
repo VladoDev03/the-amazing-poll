@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import authMiddleware from './middlewares/authMiddleware';
 import pollRoutes from './routes/PollRouter';
+import authRoutes from './routes/AuthRouter';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 app.use('/polls', pollRoutes);
+app.use('/auth', authRoutes);
 
 mongoose.connect(connectionString!)
     .then(() => {

@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import Poll from '../models/Poll';
 
+// TODO: use async await
 const createPoll = (req: Request, res: Response, next: NextFunction) => {
     const title = req.body.title;
     const choices = req.body.choices;

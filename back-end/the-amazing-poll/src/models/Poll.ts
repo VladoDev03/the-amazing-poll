@@ -1,10 +1,11 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-export interface IPoll {
+export interface IPoll extends Document {
     title: string;
+    choices: string[]
 }
 
-const pollSchema: Schema = new Schema(
+const pollSchema = new Schema<IPoll>(
     {
         title: {
             type: String,
