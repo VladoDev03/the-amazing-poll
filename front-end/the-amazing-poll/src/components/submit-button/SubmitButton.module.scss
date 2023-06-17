@@ -6,10 +6,20 @@
     border-radius: 15px;
     font-size: large;
     margin-top: 10px;
-    background-color: chartreuse;
     color: darkcyan;
+    background-color: chartreuse;
 
     &:hover {
         font-size: larger;
-    }    
+    }
+
+    &:active {
+        color: forestgreen;
+        background-color: greenyellow;
+    }
+
+    &:disabled {
+        color: darkseagreen;
+        background-color: lightgreen;
+    }
 }

@@ -1,16 +1,25 @@
 import styles from './TextInput.module.scss'
 
-const TextInput:React.FC<Vote> = (props) => {
+const TextInput:React.FC<TextInputProps> = (props) => {
     return (
         <div className={styles.inputContainer}>
-            <input className={styles.textField} placeholder={props.title} type={props.type} />
+            <input
+                className={styles.textField}
+                placeholder={props.title}
+                type={props.type}
+                name={props.name}
+                onChange={props.onChange}
+                value={props.value} />
         </div>
     );
 }
 
-interface Vote {
+interface TextInputProps {
     title: string,
-    type: string
+    type: string,
+    value: string,
+    name: string,
+    onChange: any
 }
 
 export default TextInput;
