@@ -3,6 +3,7 @@ import TextInput from '../text-input/TextInput';
 import SubmitButton from '../submit-button/SubmitButton';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import UserLogin from '../../models/UserLogin';
+import * as authServices from '../../services/authServices';
 
 const LoginForm = () => {
     const [userLogin, setUserLogin] = useState(new UserLogin('', ''));
@@ -18,7 +19,7 @@ const LoginForm = () => {
 
     const submitHandler = (e: FormEvent) => {
         e.preventDefault();
-        console.log(userLogin);
+        authServices.login(userLogin);
     }
 
     return (
