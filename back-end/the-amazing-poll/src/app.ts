@@ -1,7 +1,12 @@
-import express, { Express, Request, Response, NextFunction } from "express";
-import bodyParser from "body-parser";
+import express, { Express, Request, Response, NextFunction } from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
-const port = 8080;
+dotenv.config();
+
+const port = process.env.PORT;
+const connectionString = process.env.CONNECTION_STRING;
 
 const app: Express = express();
 
@@ -14,8 +19,16 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     next();
 });
 
+mongoose.connect(connectionString!)
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });
+
 app.get('', (req: Request, res: Response) => {
-    res.send("The Amazing Poll");
+    res.send('The Amazing Poll');
 });
 
 app.listen(port, () => {
