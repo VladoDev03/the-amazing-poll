@@ -1,9 +1,11 @@
 import './App.scss';
-import NewPoll from './components/NewPoll/NewPoll';
+import LoginForm from './components/LoginForm/LoginForm';
+// import NewPoll from './components/NewPoll/NewPoll';
 
 function App() {
     return (
-        <NewPoll />
+        // <NewPoll />
+        <LoginForm />
     );
 }
 

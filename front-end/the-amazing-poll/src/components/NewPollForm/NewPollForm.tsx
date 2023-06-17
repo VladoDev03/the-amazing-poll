@@ -9,9 +9,9 @@ const NewPollForm = () => {
         <div className={styles.formContainer}>
             <h1 className={styles.title}>Create new Poll</h1>
             <form action="">
-                <TextInput title='Question' />
+                <TextInput title='Question' type='text' />
                 <div className={styles.optionsHolder}>
-                    <TextInput title='Option' />
+                    <TextInput title='Option' type='text' />
                     <AddButton />
                 </div>
                 <div className={styles.buttonsHolder}>
