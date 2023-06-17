@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import authMiddleware from './middlewares/authMiddleware';
+import pollRoutes from './routes/PollRouter';
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
+
+app.use('/polls', pollRoutes);
 
 mongoose.connect(connectionString!)
     .then(() => {
