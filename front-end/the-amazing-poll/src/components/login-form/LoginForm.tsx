@@ -1,14 +1,15 @@
 import styles from './LoginForm.module.scss'
+import { ChangeEvent, FormEvent, useState } from 'react';
 import TextInput from '../text-input/TextInput';
 import SubmitButton from '../submit-button/SubmitButton';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import useLocalStorage from '../../hooks/useLocalStorage';
 import UserLogin from '../../models/UserLogin';
 import * as authServices from '../../services/authServices';
-import useLocalStorage from '../../hooks/useLocalStorage';
+
 
 const LoginForm = () => {
     const [userLogin, setUserLogin] = useState(new UserLogin('', ''));
-    const [auth, setAuth] = useLocalStorage('auth', {})
+    const [, setAuth] = useLocalStorage('auth', {})
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -21,9 +22,10 @@ const LoginForm = () => {
 
     const submitHandler = async (e: FormEvent) => {
         e.preventDefault();
+
         const resultData = await authServices.login(userLogin);
+
         setAuth(resultData);
-        console.log(auth);
     }
 
     return (
