@@ -6,6 +6,7 @@ import LoginForm from './components/login-form/LoginForm';
 import RegisterForm from './components/register-form/RegisterForm';
 import NewPoll from './components/new-poll/NewPoll';
 import Navbar from './components/navbar/Navbar';
+import { Logout } from './components/logout/Logout';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path='/new-poll' element={<NewPoll />}></Route>
                 <Route path='/login' element={<LoginForm />}></Route>
                 <Route path='/register' element={<RegisterForm />}></Route>
+                <Route path='/logout' element={<Logout />}></Route>
             </Routes>
         </div>
     );

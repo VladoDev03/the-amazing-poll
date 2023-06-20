@@ -34,6 +34,7 @@ const Navbar = () => {
                         <li><NavLink className={setStyle} to="/login">Login</NavLink></li>
                         <li><NavLink className={setStyle} to="/register">Register</NavLink></li>
                         <li><NavLink className={setStyle} to="/new-poll">New Poll</NavLink></li>
+                        <li><NavLink className={setStyle} to="/logout">Logout</NavLink></li>
                     </ul>
                 </div>
             </nav>
