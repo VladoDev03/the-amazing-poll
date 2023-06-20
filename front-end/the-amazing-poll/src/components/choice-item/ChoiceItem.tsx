@@ -1,8 +1,6 @@
 import styles from './ChoiceItem.module.scss'
 
-import Choice from '../../models/Choice'
-
-const ChoiceItem: React.FC<Choice> = (props) => {
+const ChoiceItem: React.FC<ChoiceItemProps> = (props) => {
     return (
         <li className={styles.choiceContainer}>
             <div className={styles.progress} style={{width: `${props.percentage}%`}}>
@@ -11,6 +9,11 @@ const ChoiceItem: React.FC<Choice> = (props) => {
             </div>
         </li>
     );
+}
+
+interface ChoiceItemProps {
+    title: string,
+    percentage: number
 }
 
 export default ChoiceItem;
