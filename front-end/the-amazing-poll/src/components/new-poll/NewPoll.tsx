@@ -13,7 +13,9 @@ const NewPoll = () => {
     const addChoiceHandler = (e: FormEvent) => {
         e.preventDefault();
 
-        // TODO: Check if empty
+        if (choice.trim().length === 0) {
+            return;
+        }
 
         const newChoice: Choice = new Choice(choice, 0);
 
