@@ -1,24 +1,21 @@
 import styles from './Preview.module.scss'
 
+import { FC } from 'react';
 import ChoicesList from '../choice-list/ChoicesList';
-
 import Choice from '../../models/Choice';
 
-const Preview = () => {
-    const items: Choice[] = [
-        new Choice("C#", 35),
-        new Choice("JS", 25),
-        new Choice("TS", 20),
-        new Choice("C++", 15),
-        new Choice("Kotlin", 5)
-    ]
-
+const Preview: FC<PreviewProps> = (props) => {
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>Languages</h1>
-            <ChoicesList items={items} />
+            <h1 className={styles.title}>{props.title}</h1>
+            <ChoicesList items={props.choices} />
         </div>
     );
+}
+
+interface PreviewProps {
+    title: string
+    choices: Choice[]
 }
 
 export default Preview;

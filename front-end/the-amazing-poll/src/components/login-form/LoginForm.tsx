@@ -6,7 +6,6 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 import UserLogin from '../../models/UserLogin';
 import * as authServices from '../../services/authServices';
 
-
 const LoginForm = () => {
     const [userLogin, setUserLogin] = useState(new UserLogin('', ''));
     const [, setAuth] = useLocalStorage('auth', {})
