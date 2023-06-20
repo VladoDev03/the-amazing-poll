@@ -8,7 +8,7 @@ import { ChangeEvent, FC, FormEvent } from 'react';
 const NewPollForm: FC<PollFormProps> = (props) => {
     return (
         <div className={styles.formContainer}>
-            <h1 className={styles.title}>Create new Poll</h1>
+            <h1 className={styles.title}>Create a new Poll</h1>
             <form action="post" onSubmit={props.submitHandler}>
                 <TextInput title='Question' type='text' name='title' onChange={props.changeTitleHandler} value={props.title} />
                 <div className={styles.optionsHolder}>
