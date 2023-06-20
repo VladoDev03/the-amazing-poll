@@ -3,8 +3,9 @@ import Preview from '../preview/Preview';
 import NewPollForm from '../new-poll-form/NewPollForm';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Choice from '../../models/Choice';
-import * as randomNumbersWithSum from '../../utils/randomNumbersWithSum';
 import PreviewTitle from '../preview-title/PreviewTitle';
+import * as randomNumbersWithSum from '../../utils/randomNumbersWithSum';
+import * as stringValidations from '../../utils/stringValidations';
 
 const NewPoll = () => {
     const [choices, setChoices] = useState<Choice[]>([]);
@@ -14,7 +15,7 @@ const NewPoll = () => {
     const addChoiceHandler = (e: FormEvent) => {
         e.preventDefault();
 
-        if (choice.trim().length === 0) {
+        if (stringValidations.isEmpty(choice)) {
             return;
         }
 
@@ -61,7 +62,7 @@ const NewPoll = () => {
                 title={title}
                 choice={choice}
                 submitHandler={submitHandler} />
-            {choices.length === 0 && title === ''
+            {choices.length === 0 && stringValidations.isEmpty(title)
                 ? <PreviewTitle />
                 : <Preview choices={choices} title={title} />}
         </div>
