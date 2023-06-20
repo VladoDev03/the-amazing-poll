@@ -1,9 +1,9 @@
 import styles from './NewPoll.module.scss'
-
 import Preview from '../preview/Preview';
 import NewPollForm from '../new-poll-form/NewPollForm';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Choice from '../../models/Choice';
+import * as randomNumbersWithSum from '../../utils/randomNumbersWithSum';
 
 const NewPoll = () => {
     const [choices, setChoices] = useState<Choice[]>([]);
@@ -13,9 +13,22 @@ const NewPoll = () => {
     const addChoiceHandler = (e: FormEvent) => {
         e.preventDefault();
 
+        // TODO: Check if empty
+
         const newChoice: Choice = new Choice(choice, 0);
 
-        setChoices(oldChoices => [...oldChoices, newChoice]);
+        setChoices(oldChoices => {
+            const percentages = randomNumbersWithSum.getPercentages(oldChoices.length + 1, 100);
+
+            const newChoices = [...oldChoices, newChoice]
+                .map((x, index) => {
+                    x.percentage = percentages[index];
+                    return x;
+                });
+
+            return newChoices;
+        });
+
         setChoice('');
     };
 
