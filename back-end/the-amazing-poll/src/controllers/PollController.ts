@@ -31,4 +31,15 @@ const createPoll = async (req: Request, res: Response, next: NextFunction) => {
     }
 }
 
-export default { getPoll, createPoll };
+const deletePoll = async (req: Request, res: Response, next: NextFunction) => {
+    const id = req.params.id;
+
+    try {
+        const poll = await Poll.findByIdAndDelete(id);
+        res.status(200).json({ poll })
+    } catch (error) {
+        res.status(500).json({ error })
+    }
+}
+
+export default { getPoll, createPoll, deletePoll };
