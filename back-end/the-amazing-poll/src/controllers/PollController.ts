@@ -2,18 +2,18 @@ import { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import Poll from '../models/Poll';
 
-// TODO: use async await
-const getPoll = (req: Request, res: Response, next: NextFunction) => {
+const getPoll = async (req: Request, res: Response, next: NextFunction) => {
     const id = req.params.id;
 
-    return Poll
-        .findById(id)
-        .then(poll => res.status(200).json({ poll }))
-        .catch(error => res.status(500).json({ error }));
+    try {
+        const poll = await Poll.findById(id);
+        res.status(200).json({ poll })
+    } catch (error) {
+        res.status(500).json({ error })
+    }
 }
 
-// TODO: use async await
-const createPoll = (req: Request, res: Response, next: NextFunction) => {
+const createPoll = async (req: Request, res: Response, next: NextFunction) => {
     const title = req.body.title;
     const choices = req.body.choices;
 
@@ -23,10 +23,12 @@ const createPoll = (req: Request, res: Response, next: NextFunction) => {
         choices: choices
     });
 
-    return poll
-        .save()
-        .then(poll => res.status(201).json({ poll }))
-        .catch(error => res.status(500).json({ error }));
+    try {
+        const savedPoll = await poll.save();
+        res.status(201).json({ poll: savedPoll });
+    } catch (error) {
+        res.status(500).json({ error });
+    }
 }
 
 export default { getPoll, createPoll };
