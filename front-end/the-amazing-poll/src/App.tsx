@@ -7,7 +7,7 @@ import RegisterForm from './components/register-form/RegisterForm';
 import NewPoll from './components/new-poll/NewPoll';
 import Navbar from './components/navbar/Navbar';
 import { Logout } from './components/logout/Logout';
-import Poll from './components/poll/Poll';
+import PollPage from './components/poll-page/PollPage';
 
 function App() {
     return (
@@ -18,7 +18,7 @@ function App() {
                 <Route path='/login' element={<LoginForm />}></Route>
                 <Route path='/register' element={<RegisterForm />}></Route>
                 <Route path='/logout' element={<Logout />}></Route>
-                <Route path='/poll/:id' element={<Poll />}></Route>
+                <Route path='/poll/:id' element={<PollPage />}></Route>
             </Routes>
         </div>
     );

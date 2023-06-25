@@ -7,7 +7,7 @@ const getPoll = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
         const poll = await Poll.findById(id);
-        res.status(200).json({ poll })
+        res.status(200).json(poll)
     } catch (error) {
         res.status(500).json({ error })
     }
